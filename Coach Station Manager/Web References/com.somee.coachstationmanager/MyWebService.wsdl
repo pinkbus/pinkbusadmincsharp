@@ -1,0 +1,1528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://coachstationmanager.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://coachstationmanager.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://coachstationmanager.com/">
+      <s:element name="GetListTimetable">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListTimetableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListTimetableResult" type="tns:ArrayOfProTIMETABLEGetTOListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProTIMETABLEGetTOListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proTIMETABLEGetTOListResult" nillable="true" type="tns:proTIMETABLEGetTOListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proTIMETABLEGetTOListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LICENSE_PLATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_ROUTE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FINSHED_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPARTURE_DATE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LOGINforEMPLOYEE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LOGINforEMPLOYEEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LOGINforEMPLOYEEResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCompanyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListCompany">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListCompanyResult" type="tns:ArrayOfProGET_LIST_COMPANYResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProGET_LIST_COMPANYResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proGET_LIST_COMPANYResult" nillable="true" type="tns:proGET_LIST_COMPANYResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proGET_LIST_COMPANYResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_PICTURE" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListCoachStation">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListCoachStationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListCoachStationResult" type="tns:ArrayOfProCOACHSTATIONGetTOListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProCOACHSTATIONGetTOListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proCOACHSTATIONGetTOListResult" nillable="true" type="tns:proCOACHSTATIONGetTOListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proCOACHSTATIONGetTOListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_PICTURE" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITY" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCoachStation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pic" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCoachStationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCoachStationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBrandOffice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="coachstationid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="officename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="officetel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="office_picture" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBrandOfficeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertBrandOfficeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfficebyCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfficebyCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOfficebyCompanyResult" type="tns:ArrayOfProGetListOfficebyCompanyResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProGetListOfficebyCompanyResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proGetListOfficebyCompanyResult" nillable="true" type="tns:proGetListOfficebyCompanyResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proGetListOfficebyCompanyResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_PICTURE" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListOfficebyCoachStation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="coachstation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfficebyCoachStationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOfficebyCoachStationResult" type="tns:ArrayOfProGetListOfficebyCoachStationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProGetListOfficebyCoachStationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proGetListOfficebyCoachStationResult" nillable="true" type="tns:proGetListOfficebyCoachStationResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proGetListOfficebyCoachStationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_STATION_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_PICTURE" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListCoach">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListCoachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListCoachResult" type="tns:ArrayOfProCOACHGetTOListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProCOACHGetTOListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proCOACHGetTOListResult" nillable="true" type="tns:proCOACHGetTOListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proCOACHGetTOListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LICENSE_PLATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE_SEAT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTAL_SEATS" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EXTRA_FEE" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCoach">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bienso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loaixe" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tongghe" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fee" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCoachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCoachResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vitri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pic" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="nhaxe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertEmployeeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="plate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEmployeeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListItinerary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idroute" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListItineraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListItineraryResult" type="tns:ArrayOfProITINERARYListbyCOACHROUTEResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProITINERARYListbyCOACHROUTEResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proITINERARYListbyCOACHROUTEResult" nillable="true" type="tns:proITINERARYListbyCOACHROUTEResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proITINERARYListbyCOACHROUTEResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_ROUTE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITINERARY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="START_TIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BOARDING" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DROPPING" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="END_TIME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertItinerary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startpoint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="starttime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endpoint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endtime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertItineraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertItineraryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTimeTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListEmployeebyCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListEmployeebyCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListEmployeebyCompanyResult" type="tns:ArrayOfProEMPLOYEEListbyCOMPANYResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProEMPLOYEEListbyCOMPANYResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proEMPLOYEEListbyCOMPANYResult" nillable="true" type="tns:proEMPLOYEEListbyCOMPANYResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proEMPLOYEEListbyCOMPANYResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POSITION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_PICUTURE" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_USERNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_PASSWORD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LICENSE_PLATE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListCoachRoute">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListCoachRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListCoachRouteResult" type="tns:ArrayOfProCOACHROUTEListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProCOACHROUTEListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="proCOACHROUTEListResult" nillable="true" type="tns:proCOACHROUTEListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="proCOACHROUTEListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_ROUTE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COACH_ROUTE_NAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COACH_ROUTE_PRICE" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPARTURE_TIME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ROUTE_TIME" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCoachRoute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="start_time" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="route_time" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCoachRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCoachRouteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_FROM_CITY_LIST">
+        <s:complexType />
+      </s:element>
+      <s:element name="android_FROM_CITY_LISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_FROM_CITY_LISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_TO_CITY_LIST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from_city" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_TO_CITY_LISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_TO_CITY_LISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_ROUTE_DETAIL_LIST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dp_date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_ROUTE_DETAIL_LISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_ROUTE_DETAIL_LISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_BOARDING_LIST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="couch_route_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_BOARDING_LISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_BOARDING_LISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_DROPPING_LIST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="couch_route_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_DROPPING_LISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_DROPPING_LISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_SEAT_LIST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dp_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="route_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_SEAT_LISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_SEAT_LISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_BOOKING_TICKET">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpt_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boarding" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dropping" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coach_route_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_BOOKING_TICKETResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_BOOKING_TICKETResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_UPDATE_PAYMENT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payment_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ticket_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_UPDATE_PAYMENTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_UPDATE_PAYMENTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_TICKET_ORDER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_TICKET_ORDERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_TICKET_ORDERResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_LOGIN_PASSENGER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_LOGIN_PASSENGERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_LOGIN_PASSENGERResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_SIGNUP_PASSENGER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_SIGNUP_PASSENGERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_SIGNUP_PASSENGERResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_DELETE_TICKET">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ticket_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_DELETE_TICKETResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_DELETE_TICKETResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="android_GET_LIST_COMPANY">
+        <s:complexType />
+      </s:element>
+      <s:element name="android_GET_LIST_COMPANYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="android_GET_LIST_COMPANYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetListTimetableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListTimetable" />
+  </wsdl:message>
+  <wsdl:message name="GetListTimetableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListTimetableResponse" />
+  </wsdl:message>
+  <wsdl:message name="LOGINforEMPLOYEESoapIn">
+    <wsdl:part name="parameters" element="tns:LOGINforEMPLOYEE" />
+  </wsdl:message>
+  <wsdl:message name="LOGINforEMPLOYEESoapOut">
+    <wsdl:part name="parameters" element="tns:LOGINforEMPLOYEEResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCompany" />
+  </wsdl:message>
+  <wsdl:message name="InsertCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetListCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetListCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetListCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListCoachStationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListCoachStation" />
+  </wsdl:message>
+  <wsdl:message name="GetListCoachStationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListCoachStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCoachStationSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCoachStation" />
+  </wsdl:message>
+  <wsdl:message name="InsertCoachStationSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCoachStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandOfficeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBrandOffice" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandOfficeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBrandOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfficebyCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOfficebyCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfficebyCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOfficebyCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfficebyCoachStationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOfficebyCoachStation" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfficebyCoachStationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOfficebyCoachStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListCoachSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListCoach" />
+  </wsdl:message>
+  <wsdl:message name="GetListCoachSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCoachSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCoach" />
+  </wsdl:message>
+  <wsdl:message name="InsertCoachSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmployee" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListItinerarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetListItinerary" />
+  </wsdl:message>
+  <wsdl:message name="GetListItinerarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetListItineraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertItinerarySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertItinerary" />
+  </wsdl:message>
+  <wsdl:message name="InsertItinerarySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertItineraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListEmployeebyCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetListEmployeebyCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetListEmployeebyCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetListEmployeebyCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListCoachRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListCoachRoute" />
+  </wsdl:message>
+  <wsdl:message name="GetListCoachRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListCoachRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCoachRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCoachRoute" />
+  </wsdl:message>
+  <wsdl:message name="InsertCoachRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCoachRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_FROM_CITY_LISTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_FROM_CITY_LIST" />
+  </wsdl:message>
+  <wsdl:message name="android_FROM_CITY_LISTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_FROM_CITY_LISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_TO_CITY_LISTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_TO_CITY_LIST" />
+  </wsdl:message>
+  <wsdl:message name="android_TO_CITY_LISTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_TO_CITY_LISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_ROUTE_DETAIL_LISTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_ROUTE_DETAIL_LIST" />
+  </wsdl:message>
+  <wsdl:message name="android_ROUTE_DETAIL_LISTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_ROUTE_DETAIL_LISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_BOARDING_LISTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_BOARDING_LIST" />
+  </wsdl:message>
+  <wsdl:message name="android_BOARDING_LISTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_BOARDING_LISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_DROPPING_LISTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_DROPPING_LIST" />
+  </wsdl:message>
+  <wsdl:message name="android_DROPPING_LISTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_DROPPING_LISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_SEAT_LISTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_SEAT_LIST" />
+  </wsdl:message>
+  <wsdl:message name="android_SEAT_LISTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_SEAT_LISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_BOOKING_TICKETSoapIn">
+    <wsdl:part name="parameters" element="tns:android_BOOKING_TICKET" />
+  </wsdl:message>
+  <wsdl:message name="android_BOOKING_TICKETSoapOut">
+    <wsdl:part name="parameters" element="tns:android_BOOKING_TICKETResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_UPDATE_PAYMENTSoapIn">
+    <wsdl:part name="parameters" element="tns:android_UPDATE_PAYMENT" />
+  </wsdl:message>
+  <wsdl:message name="android_UPDATE_PAYMENTSoapOut">
+    <wsdl:part name="parameters" element="tns:android_UPDATE_PAYMENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_TICKET_ORDERSoapIn">
+    <wsdl:part name="parameters" element="tns:android_TICKET_ORDER" />
+  </wsdl:message>
+  <wsdl:message name="android_TICKET_ORDERSoapOut">
+    <wsdl:part name="parameters" element="tns:android_TICKET_ORDERResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_LOGIN_PASSENGERSoapIn">
+    <wsdl:part name="parameters" element="tns:android_LOGIN_PASSENGER" />
+  </wsdl:message>
+  <wsdl:message name="android_LOGIN_PASSENGERSoapOut">
+    <wsdl:part name="parameters" element="tns:android_LOGIN_PASSENGERResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_SIGNUP_PASSENGERSoapIn">
+    <wsdl:part name="parameters" element="tns:android_SIGNUP_PASSENGER" />
+  </wsdl:message>
+  <wsdl:message name="android_SIGNUP_PASSENGERSoapOut">
+    <wsdl:part name="parameters" element="tns:android_SIGNUP_PASSENGERResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_DELETE_TICKETSoapIn">
+    <wsdl:part name="parameters" element="tns:android_DELETE_TICKET" />
+  </wsdl:message>
+  <wsdl:message name="android_DELETE_TICKETSoapOut">
+    <wsdl:part name="parameters" element="tns:android_DELETE_TICKETResponse" />
+  </wsdl:message>
+  <wsdl:message name="android_GET_LIST_COMPANYSoapIn">
+    <wsdl:part name="parameters" element="tns:android_GET_LIST_COMPANY" />
+  </wsdl:message>
+  <wsdl:message name="android_GET_LIST_COMPANYSoapOut">
+    <wsdl:part name="parameters" element="tns:android_GET_LIST_COMPANYResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MyWebServiceSoap">
+    <wsdl:operation name="GetListTimetable">
+      <wsdl:input message="tns:GetListTimetableSoapIn" />
+      <wsdl:output message="tns:GetListTimetableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LOGINforEMPLOYEE">
+      <wsdl:input message="tns:LOGINforEMPLOYEESoapIn" />
+      <wsdl:output message="tns:LOGINforEMPLOYEESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompany">
+      <wsdl:input message="tns:InsertCompanySoapIn" />
+      <wsdl:output message="tns:InsertCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCompany">
+      <wsdl:input message="tns:GetListCompanySoapIn" />
+      <wsdl:output message="tns:GetListCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoachStation">
+      <wsdl:input message="tns:GetListCoachStationSoapIn" />
+      <wsdl:output message="tns:GetListCoachStationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoachStation">
+      <wsdl:input message="tns:InsertCoachStationSoapIn" />
+      <wsdl:output message="tns:InsertCoachStationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrandOffice">
+      <wsdl:input message="tns:InsertBrandOfficeSoapIn" />
+      <wsdl:output message="tns:InsertBrandOfficeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfficebyCompany">
+      <wsdl:input message="tns:GetListOfficebyCompanySoapIn" />
+      <wsdl:output message="tns:GetListOfficebyCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfficebyCoachStation">
+      <wsdl:input message="tns:GetListOfficebyCoachStationSoapIn" />
+      <wsdl:output message="tns:GetListOfficebyCoachStationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoach">
+      <wsdl:input message="tns:GetListCoachSoapIn" />
+      <wsdl:output message="tns:GetListCoachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoach">
+      <wsdl:input message="tns:InsertCoachSoapIn" />
+      <wsdl:output message="tns:InsertCoachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployee">
+      <wsdl:input message="tns:InsertEmployeeSoapIn" />
+      <wsdl:output message="tns:InsertEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input message="tns:UpdateEmployeeSoapIn" />
+      <wsdl:output message="tns:UpdateEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListItinerary">
+      <wsdl:input message="tns:GetListItinerarySoapIn" />
+      <wsdl:output message="tns:GetListItinerarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertItinerary">
+      <wsdl:input message="tns:InsertItinerarySoapIn" />
+      <wsdl:output message="tns:InsertItinerarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTable">
+      <wsdl:input message="tns:UpdateTimeTableSoapIn" />
+      <wsdl:output message="tns:UpdateTimeTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListEmployeebyCompany">
+      <wsdl:input message="tns:GetListEmployeebyCompanySoapIn" />
+      <wsdl:output message="tns:GetListEmployeebyCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoachRoute">
+      <wsdl:input message="tns:GetListCoachRouteSoapIn" />
+      <wsdl:output message="tns:GetListCoachRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoachRoute">
+      <wsdl:input message="tns:InsertCoachRouteSoapIn" />
+      <wsdl:output message="tns:InsertCoachRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_FROM_CITY_LIST">
+      <wsdl:input message="tns:android_FROM_CITY_LISTSoapIn" />
+      <wsdl:output message="tns:android_FROM_CITY_LISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_TO_CITY_LIST">
+      <wsdl:input message="tns:android_TO_CITY_LISTSoapIn" />
+      <wsdl:output message="tns:android_TO_CITY_LISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_ROUTE_DETAIL_LIST">
+      <wsdl:input message="tns:android_ROUTE_DETAIL_LISTSoapIn" />
+      <wsdl:output message="tns:android_ROUTE_DETAIL_LISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_BOARDING_LIST">
+      <wsdl:input message="tns:android_BOARDING_LISTSoapIn" />
+      <wsdl:output message="tns:android_BOARDING_LISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_DROPPING_LIST">
+      <wsdl:input message="tns:android_DROPPING_LISTSoapIn" />
+      <wsdl:output message="tns:android_DROPPING_LISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_SEAT_LIST">
+      <wsdl:input message="tns:android_SEAT_LISTSoapIn" />
+      <wsdl:output message="tns:android_SEAT_LISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_BOOKING_TICKET">
+      <wsdl:input message="tns:android_BOOKING_TICKETSoapIn" />
+      <wsdl:output message="tns:android_BOOKING_TICKETSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_UPDATE_PAYMENT">
+      <wsdl:input message="tns:android_UPDATE_PAYMENTSoapIn" />
+      <wsdl:output message="tns:android_UPDATE_PAYMENTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_TICKET_ORDER">
+      <wsdl:input message="tns:android_TICKET_ORDERSoapIn" />
+      <wsdl:output message="tns:android_TICKET_ORDERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_LOGIN_PASSENGER">
+      <wsdl:input message="tns:android_LOGIN_PASSENGERSoapIn" />
+      <wsdl:output message="tns:android_LOGIN_PASSENGERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_SIGNUP_PASSENGER">
+      <wsdl:input message="tns:android_SIGNUP_PASSENGERSoapIn" />
+      <wsdl:output message="tns:android_SIGNUP_PASSENGERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_DELETE_TICKET">
+      <wsdl:input message="tns:android_DELETE_TICKETSoapIn" />
+      <wsdl:output message="tns:android_DELETE_TICKETSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="android_GET_LIST_COMPANY">
+      <wsdl:input message="tns:android_GET_LIST_COMPANYSoapIn" />
+      <wsdl:output message="tns:android_GET_LIST_COMPANYSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyWebServiceSoap" type="tns:MyWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListTimetable">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListTimetable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LOGINforEMPLOYEE">
+      <soap:operation soapAction="http://coachstationmanager.com/LOGINforEMPLOYEE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompany">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCompany">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoachStation">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListCoachStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoachStation">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertCoachStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrandOffice">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertBrandOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfficebyCompany">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListOfficebyCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfficebyCoachStation">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListOfficebyCoachStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoach">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoach">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployee">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="http://coachstationmanager.com/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListItinerary">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListItinerary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertItinerary">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertItinerary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTable">
+      <soap:operation soapAction="http://coachstationmanager.com/UpdateTimeTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListEmployeebyCompany">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListEmployeebyCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoachRoute">
+      <soap:operation soapAction="http://coachstationmanager.com/GetListCoachRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoachRoute">
+      <soap:operation soapAction="http://coachstationmanager.com/InsertCoachRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_FROM_CITY_LIST">
+      <soap:operation soapAction="http://coachstationmanager.com/android_FROM_CITY_LIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_TO_CITY_LIST">
+      <soap:operation soapAction="http://coachstationmanager.com/android_TO_CITY_LIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_ROUTE_DETAIL_LIST">
+      <soap:operation soapAction="http://coachstationmanager.com/android_ROUTE_DETAIL_LIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_BOARDING_LIST">
+      <soap:operation soapAction="http://coachstationmanager.com/android_BOARDING_LIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_DROPPING_LIST">
+      <soap:operation soapAction="http://coachstationmanager.com/android_DROPPING_LIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_SEAT_LIST">
+      <soap:operation soapAction="http://coachstationmanager.com/android_SEAT_LIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_BOOKING_TICKET">
+      <soap:operation soapAction="http://coachstationmanager.com/android_BOOKING_TICKET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_UPDATE_PAYMENT">
+      <soap:operation soapAction="http://coachstationmanager.com/android_UPDATE_PAYMENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_TICKET_ORDER">
+      <soap:operation soapAction="http://coachstationmanager.com/android_TICKET_ORDER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_LOGIN_PASSENGER">
+      <soap:operation soapAction="http://coachstationmanager.com/android_LOGIN_PASSENGER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_SIGNUP_PASSENGER">
+      <soap:operation soapAction="http://coachstationmanager.com/android_SIGNUP_PASSENGER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_DELETE_TICKET">
+      <soap:operation soapAction="http://coachstationmanager.com/android_DELETE_TICKET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_GET_LIST_COMPANY">
+      <soap:operation soapAction="http://coachstationmanager.com/android_GET_LIST_COMPANY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyWebServiceSoap12" type="tns:MyWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListTimetable">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListTimetable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LOGINforEMPLOYEE">
+      <soap12:operation soapAction="http://coachstationmanager.com/LOGINforEMPLOYEE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompany">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCompany">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoachStation">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListCoachStation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoachStation">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertCoachStation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrandOffice">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertBrandOffice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfficebyCompany">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListOfficebyCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfficebyCoachStation">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListOfficebyCoachStation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoach">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListCoach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoach">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertCoach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployee">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap12:operation soapAction="http://coachstationmanager.com/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListItinerary">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListItinerary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertItinerary">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertItinerary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTable">
+      <soap12:operation soapAction="http://coachstationmanager.com/UpdateTimeTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListEmployeebyCompany">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListEmployeebyCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCoachRoute">
+      <soap12:operation soapAction="http://coachstationmanager.com/GetListCoachRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCoachRoute">
+      <soap12:operation soapAction="http://coachstationmanager.com/InsertCoachRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_FROM_CITY_LIST">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_FROM_CITY_LIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_TO_CITY_LIST">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_TO_CITY_LIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_ROUTE_DETAIL_LIST">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_ROUTE_DETAIL_LIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_BOARDING_LIST">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_BOARDING_LIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_DROPPING_LIST">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_DROPPING_LIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_SEAT_LIST">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_SEAT_LIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_BOOKING_TICKET">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_BOOKING_TICKET" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_UPDATE_PAYMENT">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_UPDATE_PAYMENT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_TICKET_ORDER">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_TICKET_ORDER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_LOGIN_PASSENGER">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_LOGIN_PASSENGER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_SIGNUP_PASSENGER">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_SIGNUP_PASSENGER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_DELETE_TICKET">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_DELETE_TICKET" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="android_GET_LIST_COMPANY">
+      <soap12:operation soapAction="http://coachstationmanager.com/android_GET_LIST_COMPANY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyWebService">
+    <wsdl:port name="MyWebServiceSoap" binding="tns:MyWebServiceSoap">
+      <soap:address location="http://192.168.1.217/CoachStationWS/MyWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyWebServiceSoap12" binding="tns:MyWebServiceSoap12">
+      <soap12:address location="http://192.168.1.217/CoachStationWS/MyWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
